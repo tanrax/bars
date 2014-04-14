@@ -1,0 +1,431 @@
+/*! HTML5 Boilerplate v4.3.0 | MIT License | http://h5bp.com/ */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+html {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+audio,
+canvas,
+img,
+video {
+    vertical-align: middle;
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+/*
+rojo: #C92027
+naranja: #E37818
+amarillo: #E3BE32
+verde: #058C73
+morado: #5E5D7D
+ */
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+}
+#content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #5FA689;
+    margin: 0 auto;
+    overflow: hidden;
+    font-family: "Bellerose";
+}
+#titulo {
+    position: absolute;
+    color: #E37818;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 20px;
+    text-align: center;
+    font-size: 5em;
+    z-index: 4;
+    width: 230px;
+    height: 100px;
+    font-weight: bolder;
+}
+#botonEmpezar {
+    position: absolute;
+    text-align: center;
+    top: 150px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    width: 120px;
+    height: 70px;
+    padding-top: 10px;
+    font-size: 2em;
+    background-color: #C92027;
+    color: white;
+    cursor: pointer;
+    z-index: 5;
+}
+#botonEmpezar:hover {
+    background-color: #058C73;
+}
+#botonNewGame {
+  visibility: hidden;
+}
+#cartelNivel {
+  position: absolute;
+  width: 400px;
+  height: 180px;
+  margin-top: -90px;
+  margin-left: -200px;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  font-size: 4em;
+  z-index: 4;
+  color: #E37818;
+  font-weight: bolder;
+}
+#cuadro {
+    position: absolute;
+    width: 20%;
+    height: 0px;
+    background-color: #FFDC90;
+    bottom: 0;
+    left: -25%;
+    z-index: 5;
+}
+#tutorial {
+    position: absolute;
+    width: 400px;
+    height: auto;
+    margin-top: 15%;
+    right: 15%;
+    font-size: 2em;
+    visibility: hidden;
+    z-index: 9;
+}
+#pulsarTutorial {
+    float: right;
+    margin-top: 50%;
+}
+.pulsar {
+  width: 150px;
+  height: 150px;
+  line-height: 150px;
+  margin: 0 auto;
+  top: -100px;
+  position: absolute;
+  box-sizing: border-box;
+  text-align: center;
+  z-index: 0;
+  text-transform: uppercase;
+}
+
+.pulsar:before,
+.pulsar:after {
+  opacity: 0;
+  box-sizing: border-box;
+  content: "\0020";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 100px;
+  border: 5px solid #fff;
+  box-shadow: 0 0 50px #fff, inset 0 0 50px #fff;
+}
+
+.pulsar:after {
+  z-index: 1;
+  animation: aniPulsar 2s infinite 1s;
+  -webkit-animation: aniPulsar 2s infinite 1s;
+}
+
+.pulsar:before {
+  z-index: 2;
+  animation: aniPulsar 2s infinite 1s;
+  -webkit-animation: aniPulsar 2s infinite;
+}
+
+@keyframes aniPulsar {
+  0% {
+    -webkit-transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    opacity: 0;
+  }
+}
+@-webkit-keyframes aniPulsar {
+  0% {
+    -webkit-transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    opacity: 0;
+  }
+}
+#nivel {
+  position: absolute;
+  width: 150px;
+  height: 50px;
+  bottom: 0;
+  left: 0;
+  padding: 50px;
+  font-size: 3em;
+  color: white;
+}
+#toques {
+  position: absolute;
+  width: 220px;
+  height: 50px;
+  bottom: 100px;
+  right: 20px;
+  font-size: 3em;
+  color: white;
+  z-index: 1;
+}
+#tiempo {
+  position: absolute;
+  width: 220px;
+  height: 50px;
+  bottom: 35px;
+  right: 20px;
+  font-size: 3em;
+  color: white;
+  z-index: 1;
+}
+.huecoBarras {
+    float: left;
+    width: 20%;
+    height: 500px;
+    position: relative;
+}
+
+.barras {
+    position: absolute;
+    width: 100%;
+    height: 0px;
+    cursor: pointer;
+    z-index: 8;
+}
+
+#barra1 {
+    background-color: #C92027;
+}
+
+#barra2 {
+    background-color: #E37818;
+}
+
+#barra3 {
+    background-color: #E3BE32;
+}
+
+#barra4 {
+    background-color: #058C73;
+}
+
+#barra5 {
+    background-color: #5E5D7D;
+}
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+
+}
+
+@media print,
+       (-o-min-device-pixel-ratio: 5/4),
+       (-webkit-min-device-pixel-ratio: 1.25),
+       (min-resolution: 120dpi) {
+
+}
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+}
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+/* ==========================================================================
+   Print styles
+   ========================================================================== */
+
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group;
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
