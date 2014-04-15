@@ -3,6 +3,7 @@ var iNumBarras = 5;
 var iInterNewBar = 5;
 var iContBarPuls = 0;
 var iTiemCaidaBarr = 5000;
+var iTiemMovCuadro = iTiemCaidaBarr;
 var iTiemSubirBarr = 500;
 var iTiemDesapaCuadro = 2000;
 var $botonEmpezar = $('#botonEmpezar');
@@ -138,17 +139,18 @@ var generarNivel = function() {
 			break;
 		case 4:
 			iTiem = 40;
-			iToques = 40;
+			iToques = 35;
 			iInterNewBar = 2;
 			break;
 		case 5:
 			iTiem = 30;
-			iToques = 20;
+			iToques = 18;
 			iInterNewBar = 4;
 			break;
 		default:
 			iTiem = 30;
-			iToques = 25 - iNivel;
+			iToques = 45 - iNivel;
+			iTiemMovCuadro = iTiemCaidaBarr + (iNivel * 100);
 			iInterNewBar = 1;
 			break;
 	}
@@ -275,7 +277,7 @@ var reiniciarBarra = function($inBarra) {
 var moverCuadro = function() {
 	$cuadro.animate({
 	  left: iAnchura
-	}, iTiemCaidaBarr, 'linear', function() {
+	}, iTiemMovCuadro, 'linear', function() {
 		$cuadro.css('left', '-25%');
     	moverCuadro();
   	});
